@@ -1,0 +1,19 @@
+[package]
+name = "decoding_iter_macros"
+version = "0.1.0"
+authors = ["takubokudori <takubokudori@gmail.com>"]
+license = "(MIT OR Apache-2.0) AND BSD-3-Clause"
+repository = "https://github.com/takubokudori/decoding_iter"
+homepage = "https://github.com/takubokudori/decoding_iter"
+keywords = ["encoding", "charset"]
+description = "A macro for decoding_iter."
+edition = "2021"
+rust-version = "1.80.0"
+
+[dependencies]
+syn = { version = "2", features = ["full", "extra-traits"] }
+quote = "1.0"
+proc-macro2 = "1.0"
+
+[lib]
+proc-macro = true

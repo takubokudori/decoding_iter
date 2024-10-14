@@ -1,0 +1,51 @@
+[package]
+name = "decoding_iter_fuzz"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+decoding_iter = { path = ".." }
+encoding_rs = "0.8.34"
+libfuzzer-sys = "0.4"
+
+[workspace]
+
+[[bin]]
+name = "fuzz_decode_iso_2022_jp"
+path = "fuzz_targets/fuzz_decode_iso_2022_jp.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_decode_big5"
+path = "fuzz_targets/fuzz_decode_big5.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_decode_gb18030"
+path = "fuzz_targets/fuzz_decode_gb18030.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_decode_shift_jis"
+path = "fuzz_targets/fuzz_decode_shift_jis.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_decode_utf16le"
+path = "fuzz_targets/fuzz_decode_utf16le.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_decode_utf16be"
+path = "fuzz_targets/fuzz_decode_utf16be.rs"
+test = false
+doc = false

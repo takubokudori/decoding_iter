@@ -1,0 +1,119 @@
+[package]
+name = "decoding_iter"
+version = "0.1.0"
+authors = ["takubokudori <takubokudori@gmail.com>"]
+license = "(MIT OR Apache-2.0) AND BSD-3-Clause"
+repository = "https://github.com/takubokudori/decoding_iter"
+homepage = "https://github.com/takubokudori/decoding_iter"
+keywords = ["encoding", "charset"]
+description = "decoding_iter provides a decoding iterator for character encodings."
+readme = "README.md"
+edition = "2021"
+rust-version = "1.80.0"
+
+exclude = [
+    ".gitignore"
+]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[dependencies]
+decoding_iter_macros = { path = "decoding_iter_macros" }
+
+[dev-dependencies]
+encoding_rs = "0.8.34"
+criterion = "0.5"
+
+[features]
+default = ["full"]
+
+full = ["full-encodings"]
+full-encodings = [
+    "big5",
+    "euc-jp",
+    "euc-kr",
+    "gb18030",
+    "gbk",
+    "ibm866",
+    "iso-2022-jp",
+    "iso-8859-2",
+    "iso-8859-3",
+    "iso-8859-4",
+    "iso-8859-5",
+    "iso-8859-6",
+    "iso-8859-7",
+    "iso-8859-8",
+    "iso-8859-10",
+    "iso-8859-13",
+    "iso-8859-14",
+    "iso-8859-15",
+    "iso-8859-16",
+    "koi8-r",
+    "koi8-u",
+    "macintosh",
+    "shift-jis",
+    "utf-8",
+    "utf-16",
+    "windows-874",
+    "windows-1250",
+    "windows-1251",
+    "windows-1252",
+    "windows-1253",
+    "windows-1254",
+    "windows-1255",
+    "windows-1256",
+    "windows-1257",
+    "windows-1258",
+    "x-mac-cyrillic",
+]
+
+# Encodings
+big5 = []
+euc-jp = []
+euc-kr = []
+gb18030 = []
+gbk = ["gb18030"]
+ibm866 = []
+iso-2022-jp = []
+iso-8859-2 = []
+iso-8859-3 = []
+iso-8859-4 = []
+iso-8859-5 = []
+iso-8859-6 = []
+iso-8859-7 = []
+iso-8859-8 = []
+iso-8859-10 = []
+iso-8859-13 = []
+iso-8859-14 = []
+iso-8859-15 = []
+iso-8859-16 = []
+koi8-r = []
+koi8-u = []
+macintosh = []
+shift-jis = []
+utf-8 = []
+utf-16 = []
+windows-874 = []
+windows-1250 = []
+windows-1251 = []
+windows-1252 = []
+windows-1253 = []
+windows-1254 = []
+windows-1255 = []
+windows-1256 = []
+windows-1257 = []
+windows-1258 = []
+x-mac-cyrillic = []
+
+[[bench]]
+name = "bench_decode_shift_jis"
+harness = false
+
+[[bench]]
+name = "bench_decode_utf16"
+harness = false
+
+[[bench]]
+name = "bench_decode_ibm866"
+harness = false
